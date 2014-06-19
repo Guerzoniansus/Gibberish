@@ -1,0 +1,10 @@
+name: Gibberish
+main: NomarTheHero.Gibberish
+version: 1.0
+commands:
+  gibberish:
+    description: Enable / disable gibberish talk!
+    permission: gibberish.use
+    usage: /gibberish
+    permission-message: You don't have permission to do this.
+    
