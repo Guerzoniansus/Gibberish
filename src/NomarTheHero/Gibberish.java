@@ -18,9 +18,42 @@ public class Gibberish extends JavaPlugin {
 
 	public void onEnable() {
 
-		// register wuuuuurds
-
+		//REGISTER WORDS
+				
+		registerWord("you", "u");
+		registerWord("oh", "o");
+		registerWord("see", "c");
+		registerWord("why", "y");
+		registerWord("ok", "k");
+		
 		registerWord("there", "der");
+		registerWord("can", "ken");
+		registerWord("not", "nawt");
+		registerWord("no", "nu");
+		registerWord("yes", "yus");
+		registerWord("okay", "oke");
+		registerWord("right", "rite");
+		registerWord("good", "gud");
+		registerWord("stop", "stahp");
+		registerWord("please", "pls");
+		registerWord("to", "tu");
+		registerWord("more", "moar");
+		registerWord("probably", "probs");
+		registerWord("like", "leik");
+		registerWord("why", "whai");
+		registerWord("much", "mch");
+		registerWord("cry", "cri");
+		registerWord("me", "meh");
+		registerWord("that", "dat");
+		registerWord("they", "dey");
+		registerWord("how", "hao");	
+		registerWord("the", "le");
+		registerWord("what", "wat");
+		registerWord("mate", "m8");
+		
+		registerWord("i am", "i iz");
+		registerWord("thank you", "ty");
+		registerWord("lot of", "lawta");
 
 		getServer().getPluginManager().registerEvents(new ChatListener(words), this);
 	}
@@ -59,7 +92,7 @@ public class Gibberish extends JavaPlugin {
 		return true;
 	}
 
-	public void registerWord(String regularWord, String gibberishWord) {
+	private void registerWord(String regularWord, String gibberishWord) {
 		words.put("(?i)" + regularWord, gibberishWord);
 
 	}
