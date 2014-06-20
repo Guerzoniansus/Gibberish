@@ -29,6 +29,16 @@ public class Gibberish extends JavaPlugin {
 		registerWord("why", "y");
 		registerWord("ok", "k");
 		registerWord("are", "r");
+		
+		//Part of words
+		registerWord("er", "ah"); //Watah, ovah, racah
+		registerWord("ly", "leh"); //Extremeleh, goodleh, deepleh, onleh
+		registerWord("on", "un"); //I am un top of it, he is my sun, comparisun, dragun skeletun
+		registerWord("ine", "ein"); //Fine - fein, mines - meins
+		registerWord("ast", "est"); //Frostcest, cast - cest, blast - blest, last - lest, past - pest
+		//Doesnt work, there should also be ow -> ao (how - hao, wow - waow, now - nao)
+		
+		
 		registerWord("there", "der");
 		registerWord("can", "ken");
 		registerWord("not", "nawt");
@@ -50,12 +60,30 @@ public class Gibberish extends JavaPlugin {
 		registerWord("that", "dat");
 		registerWord("they", "dey");
 		registerWord("how", "hao");
-		registerWord("the", "le");
+		registerWord("the", "dah");
+		registerWord("noob", "nub");
 		registerWord("what", "wat");
 		registerWord("mate", "m8");
-
+		registerWord("would", "wud");
+		registerWord("should", "shud");
+		registerWord("have", "hav");
+		registerWord("this", "dis");
+		registerWord("your", "ur");
+		registerWord("and", "n");
+		registerWord("also", "alsu");
+		registerWord("with", "wiv");
+		registerWord("love", "luv");
+		registerWord("someone", "someun");
+		registerWord("impossible", "impossibru");
+		registerWord("possibble", "possibru");
+		registerWord("lol", "lel");
+		registerWord("though", "doe");
+		
+		registerWord(" one ", " un ");
+		registerWord(" it ", " eet "); //See dah clever spaces der? It's to make sure it's not part of a word o;; DOESNT WORK
+		
+		
 		// register phrases, phrases are two or more words separated by A SPACE
-		// o;
 		registerPhrase("i am", "i iz");
 		registerPhrase("thank you", "ty");
 		registerPhrase("lot of", "lawta");
