@@ -20,6 +20,8 @@ public class Gibberish extends JavaPlugin {
 
 	public static HashMap<String, String> phrases = new HashMap<String, String>();
 
+	public static HashMap<String, String> parts = new HashMap<String, String>();
+
 	public void onEnable() {
 
 		// TODO: partial words
@@ -35,15 +37,15 @@ public class Gibberish extends JavaPlugin {
 		registerWord("are", "r");
 
 		// Part of words
-		registerWord("er", "ah"); // Watah, ovah, racah
-		registerWord("ly", "leh"); // Extremeleh, goodleh, deepleh, onleh
-		registerWord("on", "un"); // I am un top of it, he is my sun,
+		registerPart("er", "ah"); // Watah, ovah, racah
+		registerPart("ly", "leh"); // Extremeleh, goodleh, deepleh, onleh
+		registerPart("on", "un"); // I am un top of it, he is my sun,
 									// comparisun, dragun skeletun
-		registerWord("ine", "ein"); // Fine - fein, mines - meins
-		registerWord("ast", "est"); // Frostcest, cast - cest, blast - blest,
+		registerPart("ine", "ein"); // Fine - fein, mines - meins
+		registerPart("ast", "est"); // Frostcest, cast - cest, blast - blest,
 									// last - lest, past - pest
-		registerWord("ow", "ao");
-		registerWord("some", "sum");
+		registerPart("ow", "ao");
+		registerPart("some", "sum");
 
 		registerWord("there", "der");
 		registerWord("can", "ken");
@@ -104,7 +106,7 @@ public class Gibberish extends JavaPlugin {
 		registerPhrase("no problem", "np");
 		registerPhrase("lot of", "lawta");
 
-		Bukkit.getServer().getPluginManager().registerEvents(new ChatListener(words, xwords, phrases), this);
+		Bukkit.getServer().getPluginManager().registerEvents(new ChatListener(words, xwords, phrases, parts), this);
 
 		for (String word : words.keySet()) {
 			Bukkit.getLogger().info(word);
@@ -154,6 +156,11 @@ public class Gibberish extends JavaPlugin {
 		}
 
 		xwords.put(regularWord, gibberishWords);
+
+	}
+
+	public void registerPart(String regularPart, String gibberishPart) {
+		parts.put(regularPart, gibberishPart);
 
 	}
 
