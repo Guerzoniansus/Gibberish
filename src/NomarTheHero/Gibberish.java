@@ -37,6 +37,7 @@ public class Gibberish extends JavaPlugin {
 		registerWord("ine", "ein"); //Fine - fein, mines - meins
 		registerWord("ast", "est"); //Frostcest, cast - cest, blast - blest, last - lest, past - pest
 		//Doesnt work, there should also be ow -> ao (how - hao, wow - waow, now - nao)
+		//Also some -> sum (sumthing, sumone, sumbody, sum)
 		
 		
 		registerWord("there", "der");
@@ -78,12 +79,13 @@ public class Gibberish extends JavaPlugin {
 		registerWord("possibble", "possibru");
 		registerWord("lol", "lel");
 		registerWord("though", "doe");
-		
-		registerWord(" one ", " un ");
-		registerWord(" it ", " eet "); //See dah clever spaces der? It's to make sure it's not part of a word o;; DOESNT WORK
+		registerWord("fine", "fein");	
+		registerWord("one", "un");
+		registerWord("it", "eet"); 
 		
 		
 		// register phrases, phrases are two or more words separated by A SPACE
+		registerPhrase("what are you", "wutchu");
 		registerPhrase("i am", "i iz");
 		registerPhrase("thank you", "ty");
 		registerPhrase("lot of", "lawta");
