@@ -36,9 +36,10 @@ public class ChatListener implements Listener {
 			if (Gibberish.hasEnabled.contains(player.getName())) {
 
 				String message = event.getMessage();
+				String lowerCase = message.toLowerCase();
 
 				for (String phrase : phrases.keySet()) {
-					if (message.contains(phrase)) {
+					if (lowerCase.contains(phrase)) {
 						// only replaceAll works with regex, don't use it
 						// otherwise. (use replace)
 						message = message.replaceAll("(?i)" + phrase, phrases.get(phrase));
