@@ -35,14 +35,12 @@ public class Gibberish extends JavaPlugin {
 		// Part of words
 		registerWord("er", "ah"); // Watah, ovah, racah
 		registerWord("ly", "leh"); // Extremeleh, goodleh, deepleh, onleh
-		registerWord("on", "un"); // I am un top of it, he is my sun,
-									// comparisun, dragun skeletun
+		registerWord("on", "un"); // I am un top of it, he is my sun, comparisun, dragun skeletun
 		registerWord("ine", "ein"); // Fine - fein, mines - meins
-		registerWord("ast", "est"); // Frostcest, cast - cest, blast - blest,
-									// last - lest, past - pest
-		// Doesnt work, there should also be ow -> ao (how - hao, wow - waow,
-		// now - nao)
-		// Also some -> sum (sumthing, sumone, sumbody, sum)
+		registerWord("ast", "est"); // Frostcest, cast - cest, blast - blest, last - lest, past - pest
+		registerWord("ow", "ao");
+		registerWord("some", "sum");
+		
 
 		registerWord("there", "der");
 		registerWord("can", "ken");
