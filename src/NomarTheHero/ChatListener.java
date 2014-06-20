@@ -1,6 +1,7 @@
 package NomarTheHero;
 
 import java.util.HashMap;
+import java.util.Random;
 
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
@@ -11,11 +12,17 @@ import org.bukkit.event.player.AsyncPlayerChatEvent;
 public class ChatListener implements Listener {
 
 	private HashMap<String, String> words;
+	private HashMap<String, String[]> xwords;
 	private HashMap<String, String> phrases;
 
-	public ChatListener(HashMap<String, String> words, HashMap<String, String> phrases) {
+	Random rand;
+
+	public ChatListener(HashMap<String, String> words, HashMap<String, String[]> xwords, HashMap<String, String> phrases) {
 		this.words = words;
+		this.xwords = xwords;
 		this.phrases = phrases;
+
+		rand = new Random();
 
 	}
 
@@ -29,6 +36,15 @@ public class ChatListener implements Listener {
 			if (Gibberish.hasEnabled.contains(player.getName())) {
 
 				String message = event.getMessage();
+
+				for (String phrase : phrases.keySet()) {
+					if (message.contains(phrase)) {
+						// only replaceAll works with regex, don't use it
+						// otherwise. (use replace)
+						message = message.replaceAll("(?i)" + phrase, phrases.get(phrase));
+
+					}
+				}
 
 				String[] split = message.split(" ");
 
@@ -44,18 +60,20 @@ public class ChatListener implements Listener {
 
 					}
 
+					if (xwords.containsKey(regularWord.toLowerCase())) {
+
+						String[] wordArray = xwords.get(regularWord);
+
+						split[i] = wordArray[rand.nextInt(wordArray.length)];
+
+					}
+
 				}
 
 				message = "";
 
 				for (String word : split) {
 					message += word + " ";
-
-				}
-
-				for (String word : phrases.keySet()) {
-
-					message.replace(word, phrases.get(word));
 
 				}
 
