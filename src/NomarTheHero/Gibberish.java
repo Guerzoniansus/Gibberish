@@ -82,6 +82,7 @@ public class Gibberish extends JavaPlugin {
 		registerWord("lol", "lel", "leedle", "lel");
 		registerWord("gg", "gg", "gee gee");
 		registerWord("diamond", "daimund");
+		registerWord("my", "mai", "my", "mah");
 		registerWord("though", "doe");
 		registerWord("fine", "fein");
 		registerWord("cool", "kewl");
