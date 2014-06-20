@@ -43,9 +43,8 @@ public class Gibberish extends JavaPlugin {
 		registerWord("ine", "ein"); // Fine - fein, mines - meins
 		registerWord("ast", "est"); // Frostcest, cast - cest, blast - blest,
 									// last - lest, past - pest
-		// Doesnt work, there should also be ow -> ao (how - hao, wow - waow,
-		// now - nao)
-		// Also some -> sum (sumthing, sumone, sumbody, sum)
+		registerWord("ow", "ao");
+		registerWord("some", "sum");
 
 		registerWord("there", "der");
 		registerWord("can", "ken");
@@ -84,14 +83,15 @@ public class Gibberish extends JavaPlugin {
 		registerWord("someone", "sum1", "sumbuddeh", "sumwun");
 		registerWord("impossible", "impossibru");
 		registerWord("possibble", "possibru");
-		registerWord("though", "doe");
-		registerWord("fine", "fein");
-		registerWord("one", "un");
-		registerWord("it", "eet");
-		registerWord("lol", "lol", "leedle", "lel", "lawl");
+		registerWord("lol", "lel", "leedle", "lel");
 		registerWord("gg", "gg", "gee gee");
 		registerWord("diamond", "daimund");
+		registerWord("my", "mai", "my", "mah");
+		registerWord("though", "doe");
+		registerWord("fine", "fein");
 		registerWord("cool", "kewl");
+		registerWord("one", "un");
+		registerWord("it", "eet");
 
 		// pssht ignore dese c:
 		registerWord("fawkes", "le swag master");
