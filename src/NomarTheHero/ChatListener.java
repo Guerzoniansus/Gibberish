@@ -14,13 +14,15 @@ public class ChatListener implements Listener {
 	private HashMap<String, String> words;
 	private HashMap<String, String[]> xwords;
 	private HashMap<String, String> phrases;
+	private HashMap<String, String> parts;
 
 	Random rand;
 
-	public ChatListener(HashMap<String, String> words, HashMap<String, String[]> xwords, HashMap<String, String> phrases) {
+	public ChatListener(HashMap<String, String> words, HashMap<String, String[]> xwords, HashMap<String, String> phrases, HashMap<String, String> parts) {
 		this.words = words;
 		this.xwords = xwords;
 		this.phrases = phrases;
+		this.parts = parts;
 
 		rand = new Random();
 
@@ -75,6 +77,16 @@ public class ChatListener implements Listener {
 
 				for (String word : split) {
 					message += word + " ";
+
+				}
+
+				for (String part : parts.keySet()) {
+
+					if (message.contains(part)) {
+
+						message = message.replace(part, parts.get(part));
+
+					}
 
 				}
 
