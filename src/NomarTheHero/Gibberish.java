@@ -23,6 +23,9 @@ public class Gibberish extends JavaPlugin {
 
 	public void onEnable() {
 
+		// TODO: partial words
+		// agohjaisoegjiowsdjigojwaiogjiokw
+
 		// REGISTER WORDS
 
 		registerWord("you", "u");
@@ -35,12 +38,14 @@ public class Gibberish extends JavaPlugin {
 		// Part of words
 		registerWord("er", "ah"); // Watah, ovah, racah
 		registerWord("ly", "leh"); // Extremeleh, goodleh, deepleh, onleh
-		registerWord("on", "un"); // I am un top of it, he is my sun, comparisun, dragun skeletun
+		registerWord("on", "un"); // I am un top of it, he is my sun,
+									// comparisun, dragun skeletun
 		registerWord("ine", "ein"); // Fine - fein, mines - meins
-		registerWord("ast", "est"); // Frostcest, cast - cest, blast - blest, last - lest, past - pest
-		registerWord("ow", "ao");
-		registerWord("some", "sum");
-		
+		registerWord("ast", "est"); // Frostcest, cast - cest, blast - blest,
+									// last - lest, past - pest
+		// Doesnt work, there should also be ow -> ao (how - hao, wow - waow,
+		// now - nao)
+		// Also some -> sum (sumthing, sumone, sumbody, sum)
 
 		registerWord("there", "der");
 		registerWord("can", "ken");
@@ -79,14 +84,14 @@ public class Gibberish extends JavaPlugin {
 		registerWord("someone", "sum1", "sumbuddeh", "sumwun");
 		registerWord("impossible", "impossibru");
 		registerWord("possibble", "possibru");
-		registerWord("lol", "lel", "leedle", "lel");
-		registerWord("gg", "gg", "gee gee");
-		registerWord("diamond", "daimund");
 		registerWord("though", "doe");
 		registerWord("fine", "fein");
-		registerWord("cool", "kewl");
 		registerWord("one", "un");
 		registerWord("it", "eet");
+		registerWord("lol", "lol", "leedle", "lel", "lawl");
+		registerWord("gg", "gg", "gee gee");
+		registerWord("diamond", "daimund");
+		registerWord("cool", "kewl");
 
 		// pssht ignore dese c:
 		registerWord("fawkes", "le swag master");
@@ -154,7 +159,7 @@ public class Gibberish extends JavaPlugin {
 	}
 
 	private void registerPhrase(String regularPhrase, String gibberishPhrase) {
-		phrases.put("(?i)" + regularPhrase, gibberishPhrase);
+		phrases.put(regularPhrase, gibberishPhrase);
 
 	}
 
