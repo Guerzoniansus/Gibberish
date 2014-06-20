@@ -94,6 +94,11 @@ public class ChatListener implements Listener {
 
 				}
 
+				if (rand.nextInt(10) < 2) {
+					message += "o;";
+
+				}
+
 				event.setMessage(message);
 
 			}
