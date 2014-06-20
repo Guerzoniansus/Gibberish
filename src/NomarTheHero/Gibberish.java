@@ -17,6 +17,8 @@ public class Gibberish extends JavaPlugin {
 
 	public static HashMap<String, String> words = new HashMap<String, String>();
 
+	public static HashMap<String, String[]> xwords = new HashMap<String, String[]>();
+
 	public static HashMap<String, String> phrases = new HashMap<String, String>();
 
 	public void onEnable() {
@@ -29,17 +31,19 @@ public class Gibberish extends JavaPlugin {
 		registerWord("why", "y");
 		registerWord("ok", "k");
 		registerWord("are", "r");
-		
-		//Part of words
-		registerWord("er", "ah"); //Watah, ovah, racah
-		registerWord("ly", "leh"); //Extremeleh, goodleh, deepleh, onleh
-		registerWord("on", "un"); //I am un top of it, he is my sun, comparisun, dragun skeletun
-		registerWord("ine", "ein"); //Fine - fein, mines - meins
-		registerWord("ast", "est"); //Frostcest, cast - cest, blast - blest, last - lest, past - pest
-		//Doesnt work, there should also be ow -> ao (how - hao, wow - waow, now - nao)
-		//Also some -> sum (sumthing, sumone, sumbody, sum)
-		
-		
+
+		// Part of words
+		registerWord("er", "ah"); // Watah, ovah, racah
+		registerWord("ly", "leh"); // Extremeleh, goodleh, deepleh, onleh
+		registerWord("on", "un"); // I am un top of it, he is my sun,
+									// comparisun, dragun skeletun
+		registerWord("ine", "ein"); // Fine - fein, mines - meins
+		registerWord("ast", "est"); // Frostcest, cast - cest, blast - blest,
+									// last - lest, past - pest
+		// Doesnt work, there should also be ow -> ao (how - hao, wow - waow,
+		// now - nao)
+		// Also some -> sum (sumthing, sumone, sumbody, sum)
+
 		registerWord("there", "der");
 		registerWord("can", "ken");
 		registerWord("not", "nawt");
@@ -61,9 +65,9 @@ public class Gibberish extends JavaPlugin {
 		registerWord("that", "dat");
 		registerWord("they", "dey");
 		registerWord("how", "hao");
-		registerWord("the", "dah");
-		registerWord("noob", "nub");
-		registerWord("what", "wat");
+		registerWord("the", "da", "teh", "le");
+		registerWord("noob", "nub", "newb");
+		registerWord("what", "wat", "wot", "wut");
 		registerWord("mate", "m8");
 		registerWord("would", "wud");
 		registerWord("should", "shud");
@@ -73,24 +77,29 @@ public class Gibberish extends JavaPlugin {
 		registerWord("and", "n");
 		registerWord("also", "alsu");
 		registerWord("with", "wiv");
-		registerWord("love", "luv");
-		registerWord("someone", "someun");
+		registerWord("love", "luv", "wuv");
+		registerWord("someone", "sum1", "sumbuddeh", "sumwun");
 		registerWord("impossible", "impossibru");
 		registerWord("possibble", "possibru");
 		registerWord("lol", "lel");
 		registerWord("though", "doe");
-		registerWord("fine", "fein");	
+		registerWord("fine", "fein");
 		registerWord("one", "un");
-		registerWord("it", "eet"); 
-		
-		
+		registerWord("it", "eet");
+
+		// pssht ignore dese c:
+		registerWord("fawkes", "le swag master");
+		registerWord("seawee", "le swag master");
+		registerWord("seawee65", "le swag master");
+
 		// register phrases, phrases are two or more words separated by A SPACE
 		registerPhrase("what are you", "wutchu");
 		registerPhrase("i am", "i iz");
 		registerPhrase("thank you", "ty");
+		registerPhrase("no problem", "np");
 		registerPhrase("lot of", "lawta");
 
-		Bukkit.getServer().getPluginManager().registerEvents(new ChatListener(words, phrases), this);
+		Bukkit.getServer().getPluginManager().registerEvents(new ChatListener(words, xwords, phrases), this);
 
 		for (String word : words.keySet()) {
 			Bukkit.getLogger().info(word);
@@ -131,8 +140,15 @@ public class Gibberish extends JavaPlugin {
 		return true;
 	}
 
-	private void registerWord(String regularWord, String gibberishWord) {
-		words.put(regularWord, gibberishWord);
+	public static void registerWord(String regularWord, String... gibberishWords) {
+
+		if (gibberishWords.length == 1) {
+			words.put(regularWord, gibberishWords[0]);
+			return;
+
+		}
+
+		xwords.put(regularWord, gibberishWords);
 
 	}
 
