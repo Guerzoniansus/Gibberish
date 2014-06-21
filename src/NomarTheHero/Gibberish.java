@@ -105,7 +105,7 @@ public class Gibberish extends JavaPlugin {
 		registerWord("it", "eet");
 		registerWord("i'm", "i iz");
 		registerWord("im", "i iz");
-		registerWord("omg", "omg", "oh em gee", "omgawsh", "gawd");
+		registerWord("omg", "omg", "oh em gee", "omgawsh", "gawd", "erhmagerd");
 		registerWord("swag", "sweg");
 		registerWord("hello", "hellow", "helloh", "ellow der");
 		registerWord("then", "den");
@@ -113,6 +113,9 @@ public class Gibberish extends JavaPlugin {
 		registerWord("damn", "dayum");
 		registerWord("damnit", "dayum eet");
 		registerWord("pc", "pee cee");
+		registerWord("doesnt", "dusnt");
+		registerWord("doesn't", "dusn't");
+		registerWord("plugin", "ploogin");
 		
 		
 		// Easter eggs
