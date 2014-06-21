@@ -35,6 +35,8 @@ public class Gibberish extends JavaPlugin {
 		registerWord("why", "y");
 		registerWord("ok", "k");
 		registerWord("are", "r");
+		registerWord("be", "b");
+		
 
 		// Part of words
 		registerPart("er", "ah"); // Watah, ovah, racah
@@ -45,16 +47,19 @@ public class Gibberish extends JavaPlugin {
 		registerPart("ast", "est"); // Frostcest, cast - cest, blast - blest,
 									// last - lest, past - pest
 		registerPart("some", "sum");
+		registerPart("ing", "in"); //doin, goin
+		
 
 		registerWord("there", "der");
 		registerWord("can", "ken");
 		registerWord("not", "nawt");
 		registerWord("no", "nu");
 		registerWord("yes", "yus");
-		registerWord("okay", "oke");
+		registerWord("okay", "oke", "k");
+		registerWord("ok", "oke", "k");
 		registerWord("right", "rite");
 		registerWord("how", "hao");
-		registerWord("wow", "wao", "mom upside down");
+		registerWord("wow", "wao");
 		registerWord("good", "gud");
 		registerWord("stop", "stahp");
 		registerWord("please", "pls");
@@ -69,17 +74,20 @@ public class Gibberish extends JavaPlugin {
 		registerWord("that", "dat");
 		registerWord("they", "dey");
 		registerWord("how", "hao");
-		registerWord("the", "da", "teh", "le");
+		registerWord("the", "da", "teh", "le", "dah");
 		registerWord("noob", "nub", "newb");
 		registerWord("what", "wat", "wot", "wut");
 		registerWord("mate", "m8");
 		registerWord("would", "wud");
 		registerWord("should", "shud");
+		registerWord("on", "awn");
 		registerWord("have", "hav");
 		registerWord("this", "dis");
 		registerWord("your", "ur");
 		registerWord("and", "n");
 		registerWord("also", "alsu");
+		registerWord("hack", "hax");
+		registerWord("hacks", "hax");
 		registerWord("with", "wiv");
 		registerWord("love", "luv", "wuv");
 		registerWord("someone", "sum1", "sumbuddeh", "sumwun");
@@ -94,11 +102,30 @@ public class Gibberish extends JavaPlugin {
 		registerWord("cool", "kewl");
 		registerWord("one", "un");
 		registerWord("it", "eet");
-
-		// pssht ignore dese c:
+		registerWord("i'm", "i iz");
+		registerWord("im", "i iz");
+		registerWord("omg", "omg", "oh em gee", "omgawsh", "gawd");
+		registerWord("swag", "sweg");
+		registerWord("hello", "hellow", "helloh", "ellow der");
+		registerWord("then", "den");
+		registerWord("was", "wus");
+		
+		
+		// Easter eggs
 		registerWord("fawkes", "le swag master");
 		registerWord("seawee", "le swag master");
 		registerWord("seawee65", "le swag master");
+		registerWord("gibberish", "Gibberish [By Seawee and Nomar");
+		registerWord("notch", "King of Minecraft");
+		registerWord("herobrine", "Slender");
+		registerWord("skydoesmc", "Butter King");
+		registerWord("skydoesminecraft", "Butter King");
+		registerWord("mc", "Dah coolest game evah");
+		registerWord("minecraft", "Dah coolest game evah");
+		registerWord("admin", "Mr. Admin");
+		registerWord("mod", "Mr. Mod");
+		registerWord("owner", "Mr. Owner");
+		
 
 		// register phrases, phrases are two or more words separated by A SPACE
 		registerPhrase("what are you", "wutchu");
@@ -106,6 +133,9 @@ public class Gibberish extends JavaPlugin {
 		registerPhrase("thank you", "ty");
 		registerPhrase("no problem", "np");
 		registerPhrase("lot of", "lawta");
+		registerPhrase("don't know", "dunno");
+		registerPhrase("dont know", "dunno");
+		registerPhrase("shut up", "shuddup");
 
 		Bukkit.getServer().getPluginManager().registerEvents(new ChatListener(words, xwords, phrases, parts), this);
 
