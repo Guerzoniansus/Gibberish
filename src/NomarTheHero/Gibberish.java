@@ -48,6 +48,7 @@ public class Gibberish extends JavaPlugin {
 									// last - lest, past - pest
 		registerPart("some", "sum");
 		registerPart("ing", "in"); //doin, goin
+		registerPart("ang", "eng"); //beng, geng, deng
 		
 
 		registerWord("there", "der");
@@ -109,13 +110,16 @@ public class Gibberish extends JavaPlugin {
 		registerWord("hello", "hellow", "helloh", "ellow der");
 		registerWord("then", "den");
 		registerWord("was", "wus");
+		registerWord("damn", "dayum");
+		registerWord("damnit", "dayum eet");
+		registerWord("pc", "pee cee");
 		
 		
 		// Easter eggs
 		registerWord("fawkes", "le swag master");
 		registerWord("seawee", "le swag master");
 		registerWord("seawee65", "le swag master");
-		registerWord("gibberish", "Gibberish [By Seawee and Nomar");
+		registerWord("gibberish", "Gibberish [By Seawee & Nomar]");
 		registerWord("notch", "King of Minecraft");
 		registerWord("herobrine", "Slender");
 		registerWord("skydoesmc", "Butter King");
@@ -136,6 +140,7 @@ public class Gibberish extends JavaPlugin {
 		registerPhrase("don't know", "dunno");
 		registerPhrase("dont know", "dunno");
 		registerPhrase("shut up", "shuddup");
+		registerPhrase("damn it", "dayum eet");
 
 		Bukkit.getServer().getPluginManager().registerEvents(new ChatListener(words, xwords, phrases, parts), this);
 
