@@ -49,6 +49,8 @@ public class Gibberish extends JavaPlugin {
 		registerPart("some", "sum");
 		registerPart("ing", "in"); //doin, goin
 		registerPart("ang", "eng"); //beng, geng, deng
+		registerPart("rr", "ww"); //Huwway, sowwy
+		registerPart("ate", "8");
 		
 
 		registerWord("there", "der");
@@ -116,13 +118,33 @@ public class Gibberish extends JavaPlugin {
 		registerWord("doesnt", "dusnt");
 		registerWord("doesn't", "dusn't");
 		registerWord("plugin", "ploogin");
-		
+		registerWord("those", "dose");
+		registerWord("cant", "kent");
+		registerWord("thats", "dats");
+		registerWord("that's", "dat's");
+		registerWord("wanna", "wunna");
+		registerWord("than", "dan");
+		registerWord("is", "is", "iz");
+		registerWord("babe", "bae");
+		registerWord("today", "todai");
+		registerWord("said", "sed");
+		registerWord("now", "nao");
+		registerWord("wrecked", "rekt");
+		registerWord("sexy", "sxc");
+		registerWord("jealous", "jelleh");
+		registerWord("night", "nite");
+		registerWord("fight", "fite");
+		registerWord("bro", "brah");
+		registerWord("terrible", "terribru");
+		registerWord("of", "awf");
 		
 		// Easter eggs
 		registerWord("fawkes", "le swag master");
 		registerWord("seawee", "le swag master");
 		registerWord("seawee65", "le swag master");
-		registerWord("gibberish", "Gibberish [By Seawee & Nomar]");
+		registerWord("duke", "dook");
+		registerWord("duke402", "dook402");
+		registerWord("gibberish", "Gibberish [By Seawee & Nomar]", "Gibberish");
 		registerWord("notch", "King of Minecraft");
 		registerWord("herobrine", "Slender");
 		registerWord("skydoesmc", "Butter King");
@@ -132,6 +154,8 @@ public class Gibberish extends JavaPlugin {
 		registerWord("admin", "Mr. Admin");
 		registerWord("mod", "Mr. Mod");
 		registerWord("owner", "Mr. Owner");
+		registerWord("butter", "gold");
+		registerWord(":o", "o;");
 		
 
 		// register phrases, phrases are two or more words separated by A SPACE
