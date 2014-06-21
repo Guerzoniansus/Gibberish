@@ -44,7 +44,6 @@ public class Gibberish extends JavaPlugin {
 		registerPart("ine", "ein"); // Fine - fein, mines - meins
 		registerPart("ast", "est"); // Frostcest, cast - cest, blast - blest,
 									// last - lest, past - pest
-		registerPart("ow", "ao");
 		registerPart("some", "sum");
 
 		registerWord("there", "der");
@@ -54,6 +53,8 @@ public class Gibberish extends JavaPlugin {
 		registerWord("yes", "yus");
 		registerWord("okay", "oke");
 		registerWord("right", "rite");
+		registerWord("how", "hao");
+		registerWord("wow", "wao", "mom upside down");
 		registerWord("good", "gud");
 		registerWord("stop", "stahp");
 		registerWord("please", "pls");

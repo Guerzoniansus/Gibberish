@@ -61,6 +61,8 @@ public class ChatListener implements Listener {
 
 						split[i] = words.get(regularWord);
 
+						continue;
+
 					}
 
 					if (xwords.containsKey(regularWord.toLowerCase())) {
@@ -68,6 +70,18 @@ public class ChatListener implements Listener {
 						String[] wordArray = xwords.get(regularWord);
 
 						split[i] = wordArray[rand.nextInt(wordArray.length)];
+
+						continue;
+
+					}
+
+					for (String part : parts.keySet()) {
+
+						if (regularWord.contains(part)) {
+
+							split[i] = regularWord.replace(part, parts.get(part));
+
+						}
 
 					}
 
@@ -80,13 +94,8 @@ public class ChatListener implements Listener {
 
 				}
 
-				for (String part : parts.keySet()) {
-
-					if (message.contains(part)) {
-
-						message = message.replace(part, parts.get(part));
-
-					}
+				if (rand.nextInt(10) < 2) {
+					message += "o;";
 
 				}
 
