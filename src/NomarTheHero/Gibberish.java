@@ -31,16 +31,18 @@ public class Gibberish extends JavaPlugin {
 
 		// word ednings
 		registerEnding("ow", "ao");
-		registerEnding("ine", "ein"); // Fine - fein, mines - meins
 		registerEnding("ast", "est"); // Frostcest, cast - cest, blast - blest,
-		registerEnding("some", "sum");
-		registerEnding("some", "sum");
 		registerEnding("ing", "in"); // doin, goin
-		registerEnding("ang", "eng"); // beng, geng, deng
-		registerEnding("rr", "ww"); // Huwway, sowwy
+		registerEnding("er", "ah"); //watah, ovah, racah
+		registerEnding("ly", "leh");
 		registerEnding("ate", "8");
+		registerPart("on", "un"); //he is my sun
+		registerPart("some", "sum");
+		registerPart("ang", "eng"); // beng, geng, deng
+		registerPart("rr", "ww"); // Huwway, sowwy
+		registerPart("ine", "ein"); // Fine - fein, mines - meins
 		registerPart("ould", "ud"); // shud, wud
-
+		
 		// REGISTER WORDS
 
 		registerWord("you", "u");
@@ -50,11 +52,6 @@ public class Gibberish extends JavaPlugin {
 		registerWord("ok", "k");
 		registerWord("are", "r");
 		registerWord("be", "b");
-
-		// Part of words
-		registerPart("er", "ah"); // Watah, ovah, racah
-		registerPart("ly", "leh"); // Extremeleh, goodleh, deepleh, onleh
-		registerPart("on", "un"); // I am un top of it, he is my sun,
 
 		registerWord("there", "der");
 		registerWord("can", "ken");
@@ -103,7 +100,7 @@ public class Gibberish extends JavaPlugin {
 		registerWord("my", "mai", "my", "mah");
 		registerWord("though", "doe");
 		registerWord("fine", "fein");
-		registerWord("cool", "kewl", "kool aid");
+		registerWord("cool", "kewl", "kool");
 		registerWord("one", "un");
 		registerWord("it", "eet");
 		registerWord("i'm", "i iz");
@@ -155,7 +152,7 @@ public class Gibberish extends JavaPlugin {
 		registerWord("minecraft", "Dah coolest game evah");
 		registerWord("admin", "Mr. Admin");
 		registerWord("mod", "Mr. Mod");
-		registerWord("owner", "Mr. Owner", "NomarLeSwagMaster");
+		registerWord("owner", "Mr. Owner");
 		registerWord("butter", "gold");
 		registerWord(":o", "o;");
 
