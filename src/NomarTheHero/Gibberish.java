@@ -185,6 +185,10 @@ public class Gibberish extends JavaPlugin {
 			if (sender instanceof Player) {
 
 				Player player = (Player) sender;
+				
+				if (!player.hasPermission("gibberish.use")){
+					return false;
+				}
 
 				if (args.length != 0) {
 					player.sendMessage(ChatColor.RED + "Usage: /gibberish");
