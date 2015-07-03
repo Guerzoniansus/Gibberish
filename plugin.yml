@@ -1,6 +1,6 @@
-name: Gibberish
-main: NomarTheHero.Gibberish
-version: 1.0
+name: Gibberish-Ultra
+main: com.fawkes.plugin.Gibberish
+version: 0.1
 commands:
   gibberish:
     description: Enable / disable gibberish talk!

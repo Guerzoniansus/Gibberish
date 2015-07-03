@@ -1,4 +1,4 @@
-package NomarTheHero;
+package com.fawkes.plugin;
 
 import java.util.HashMap;
 import java.util.Random;
