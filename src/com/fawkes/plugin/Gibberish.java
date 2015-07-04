@@ -1,8 +1,8 @@
 package com.fawkes.plugin;
 
-import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Set;
+
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.command.Command;
@@ -13,166 +13,161 @@ import org.bukkit.plugin.java.JavaPlugin;
 public class Gibberish extends JavaPlugin {
 
 	public static Set<String> hasEnabled = new HashSet<String>();
-
-	public static HashMap<String, String> words = new HashMap<String, String>();
-
-	public static HashMap<String, String[]> xwords = new HashMap<String, String[]>();
-
-	public static HashMap<String, String> phrases = new HashMap<String, String>();
-
-	public static HashMap<String, String> parts = new HashMap<String, String>();
-
-	public static HashMap<String, String> endings = new HashMap<String, String>();
+	ChatListener chat;
 
 	public void onEnable() {
 
 		// TODO: partial words
 		// agohjaisoegjiowsdjigojwaiogjiokw
 
+		chat = new ChatListener();
+
 		// word ednings
-		registerEnding("ow", "ao");
-		registerEnding("ast", "est"); // Frostcest, cast - cest, blast - blest,
-		registerEnding("ing", "in"); // doin, goin
-		registerEnding("er", "ah"); //watah, ovah, racah
-		registerEnding("ly", "leh");
-		registerEnding("ate", "8");
-		registerPart("on", "un"); //he is my sun
-		registerPart("some", "sum");
-		registerPart("ang", "eng"); // beng, geng, deng
-		registerPart("rr", "ww"); // Huwway, sowwy
-		registerPart("ine", "ein"); // Fine - fein, mines - meins
-		registerPart("ould", "ud"); // shud, wud
-		
+		chat.registerEnding("ow", "ao");
+		chat.registerEnding("ast", "est"); // Frostcest, cast - cest, blast -
+											// blest,
+		chat.registerEnding("ing", "in"); // doin, goin
+		chat.registerEnding("er", "ah"); // watah, ovah, racah
+		chat.registerEnding("ly", "leh");
+		chat.registerEnding("ate", "8");
+		chat.registerPart("on", "un"); // he is my sun
+		chat.registerPart("some", "sum");
+		chat.registerPart("ang", "eng"); // beng, geng, deng
+		chat.registerPart("rr", "ww"); // Huwway, sowwy
+		chat.registerPart("ine", "ein"); // Fine - fein, mines - meins
+		chat.registerPart("ould", "ud"); // shud, wud
+
 		// REGISTER WORDS
 
-		registerWord("you", "u");
-		registerWord("oh", "o");
-		registerWord("see", "c");
-		registerWord("why", "y");
-		registerWord("ok", "k");
-		registerWord("are", "r");
-		registerWord("be", "b");
+		chat.registerWord("you", "u");
+		chat.registerWord("oh", "o");
+		chat.registerWord("see", "c");
+		chat.registerWord("why", "y");
+		chat.registerWord("ok", "k");
+		chat.registerWord("are", "r");
+		chat.registerWord("be", "b");
 
-		registerWord("there", "der");
-		registerWord("can", "ken");
-		registerWord("not", "nawt");
-		registerWord("no", "nu");
-		registerWord("yes", "yus");
-		registerWord("okay", "oke", "k");
-		registerWord("ok", "oke", "k");
-		registerWord("right", "rite");
-		registerWord("how", "hao");
-		registerWord("wow", "wao");
-		registerWord("good", "gud");
-		registerWord("stop", "stahp");
-		registerWord("please", "pls");
-		registerWord("to", "tu");
-		registerWord("more", "moar");
-		registerWord("probably", "probs");
-		registerWord("like", "leik");
-		registerWord("why", "whai");
-		registerWord("much", "mch");
-		registerWord("cry", "cri");
-		registerWord("me", "meh");
-		registerWord("that", "dat");
-		registerWord("they", "dey");
-		registerWord("how", "hao");
-		registerWord("the", "da", "teh", "le", "dah");
-		registerWord("noob", "nub", "newb");
-		registerWord("what", "wat", "wot", "wut");
-		registerWord("mate", "m8");
-		registerWord("on", "awn");
-		registerWord("have", "hav");
-		registerWord("this", "dis", "dees", "dish");
-		registerWord("your", "ur", "yewr");
-		registerWord("and", "n", "an");
-		registerWord("also", "alsu");
-		registerWord("hack", "hak");
-		registerWord("hacks", "hax");
-		registerWord("with", "wiv");
-		registerWord("love", "luv", "wuv");
-		registerWord("someone", "sum1", "sumbuddeh", "sumwun");
-		registerWord("impossible", "impossibru");
-		registerWord("possibble", "possibru");
-		registerWord("lol", "lel", "leedle", "lel");
-		registerWord("gg", "gg", "gee gee");
-		registerWord("diamond", "daimund");
-		registerWord("my", "mai", "my", "mah");
-		registerWord("though", "doe");
-		registerWord("fine", "fein");
-		registerWord("cool", "kewl", "kool");
-		registerWord("one", "un");
-		registerWord("it", "eet");
-		registerWord("i'm", "i iz");
-		registerWord("im", "i iz");
-		registerWord("omg", "omg", "oh em gee", "omgawsh", "uh meh gawsh", "erhmagerd");
-		registerWord("swag", "sweg");
-		registerWord("hello", "hellow", "helloh", "ellow der");
-		registerWord("then", "den");
-		registerWord("was", "wus");
-		registerWord("damn", "dayum");
-		registerWord("damnit", "dammit");
-		registerWord("pc", "pee cee");
-		registerWord("doesnt", "dusnt");
-		registerWord("doesn't", "dusn't");
-		registerWord("plugin", "ploogin", "pluhgin");
-		registerWord("those", "dose");
-		registerWord("cant", "kent");
-		registerWord("thats", "dats");
-		registerWord("that's", "dat's");
-		registerWord("wanna", "wunna");
-		registerWord("than", "dan");
-		registerWord("is", "is", "iz");
-		registerWord("babe", "bae", "bb");
-		registerWord("today", "todai");
-		registerWord("said", "sed");
-		registerWord("now", "nao");
-		registerWord("wrecked", "rekt");
-		registerWord("sexy", "sxc");
-		registerWord("jealous", "jelleh");
-		registerWord("night", "nite");
-		registerWord("fight", "fite");
-		registerWord("bro", "brah");
-		registerWord("terrible", "terribru");
-		registerWord("of", "awf");
-		registerWord("help", "halp");
+		chat.registerWord("there", "der");
+		chat.registerWord("can", "ken");
+		chat.registerWord("not", "nawt");
+		chat.registerWord("no", "nu");
+		chat.registerWord("yes", "yus");
+		chat.registerWord("okay", "oke", "k");
+		chat.registerWord("ok", "oke", "k");
+		chat.registerWord("right", "rite");
+		chat.registerWord("how", "hao");
+		chat.registerWord("wow", "wao");
+		chat.registerWord("good", "gud");
+		chat.registerWord("stop", "stahp");
+		chat.registerWord("please", "pls");
+		chat.registerWord("to", "tu");
+		chat.registerWord("more", "moar");
+		chat.registerWord("probably", "probs");
+		chat.registerWord("like", "leik");
+		chat.registerWord("why", "whai");
+		chat.registerWord("much", "mch");
+		chat.registerWord("cry", "cri");
+		chat.registerWord("me", "meh");
+		chat.registerWord("that", "dat");
+		chat.registerWord("they", "dey");
+		chat.registerWord("how", "hao");
+		chat.registerWord("the", "da", "teh", "le", "dah");
+		chat.registerWord("noob", "nub", "newb");
+		chat.registerWord("what", "wat", "wot", "wut");
+		chat.registerWord("mate", "m8");
+		chat.registerWord("on", "awn");
+		chat.registerWord("have", "hav");
+		chat.registerWord("this", "dis", "dees", "dish");
+		chat.registerWord("your", "ur", "yewr");
+		chat.registerWord("and", "n", "an");
+		chat.registerWord("also", "alsu");
+		chat.registerWord("hack", "hak");
+		chat.registerWord("hacks", "hax");
+		chat.registerWord("with", "wiv");
+		chat.registerWord("love", "luv", "wuv");
+		chat.registerWord("someone", "sum1", "sumbuddeh", "sumwun", "someboday");
+		chat.registerWord("impossible", "impossibru");
+		chat.registerWord("possible", "possibru");
+		chat.registerWord("lol", "lel", "leedle", "lmao");
+		chat.registerWord("gg", "gg", "gee gee", "ggggg");
+		chat.registerWord("diamond", "daimund");
+		chat.registerWord("my", "mai", "my", "mah");
+		chat.registerWord("though", "doe", "tho");
+		chat.registerWord("fine", "fein");
+		chat.registerWord("cool", "kewl", "kool");
+		chat.registerWord("one", "un");
+		chat.registerWord("it", "eet");
+		chat.registerWord("i'm", "i iz", "im");
+		chat.registerWord("im", "i iz");
+		chat.registerWord("omg", "omg", "oh em gee", "omgawsh", "uh meh gawsh", "erhmagerd");
+		chat.registerWord("swag", "sweg");
+		chat.registerWord("hello", "hellow", "helloh", "ellow der");
+		chat.registerWord("then", "den");
+		chat.registerWord("was", "wus");
+		chat.registerWord("damn", "dayum");
+		chat.registerWord("damnit", "dammit");
+		chat.registerWord("pc", "pee cee");
+		chat.registerWord("doesnt", "dusnt");
+		chat.registerWord("doesn't", "dusn't");
+		chat.registerWord("plugin", "ploogin", "pluhgin");
+		chat.registerWord("those", "dose");
+		chat.registerWord("cant", "kent");
+		chat.registerWord("thats", "dats");
+		chat.registerWord("that's", "dat's");
+		chat.registerWord("wanna", "wunna");
+		chat.registerWord("than", "dan");
+		chat.registerWord("is", "is", "iz");
+		chat.registerWord("babe", "bae", "bb");
+		chat.registerWord("today", "todai");
+		chat.registerWord("said", "sed");
+		chat.registerWord("now", "nao");
+		chat.registerWord("wrecked", "rekt");
+		chat.registerWord("sexy", "sxc");
+		chat.registerWord("jealous", "jelleh");
+		chat.registerWord("night", "nite");
+		chat.registerWord("fight", "fite");
+		chat.registerWord("bro", "brah");
+		chat.registerWord("terrible", "terribru");
+		chat.registerWord("of", "awf");
+		chat.registerWord("help", "halp");
 
 		// Easter eggs
-		registerPart("duke", "nub");
-		registerWord("fawkes", "le swag master");
-		registerWord("seawee", "le swag master");
-		registerWord("seawee65", "le swag master");
-		registerWord("fawk", "I am a nub");
-		registerWord("gibberish", "Gibberish [By Seawee & Nomar]", "Gibberish");
-		registerWord("notch", "King of Minecraft");
-		registerWord("herobrine", "Slender");
-		registerWord("skydoesmc", "Butter King");
-		registerWord("skydoesminecraft", "Butter King");
-		registerWord("mc", "Dah coolest game evah");
-		registerWord("minecraft", "Dah coolest game evah");
-		registerWord("admin", "Mr. Admin");
-		registerWord("mod", "Mr. Mod");
-		registerWord("owner", "Mr. Owner");
-		registerWord("butter", "gold");
-		registerWord(":o", "o;");
+		chat.registerPart("duke", "nub");
+		chat.registerWord("nomar", "normar");
+		chat.registerWord("fawkes", "le swag master");
+		chat.registerWord("seawee", "le swag master");
+		chat.registerWord("seawee65", "le swag master");
+		chat.registerWord("fawk", "I am a nub");
+		chat.registerWord("gibberish", "Gibberish [By Seawee & Nomar]", "Gibberish");
+		chat.registerWord("notch", "King of Minecraft");
+		chat.registerWord("herobrine", "Slender");
+		chat.registerWord("skydoesmc", "Butter King");
+		chat.registerWord("skydoesminecraft", "Butter King");
+		chat.registerWord("mc", "Dah coolest game evah");
+		chat.registerWord("minecraft", "Dah coolest game evah");
+		chat.registerWord("admin", "Mr. Admin");
+		chat.registerWord("mod", "Mr. Mod");
+		chat.registerWord("owner", "Mr. Owner");
+		chat.registerWord("butter", "gold");
+		chat.registerWord(":o", "o;");
 
 		// register phrases, phrases are two or more words separated by A SPACE
-		registerPhrase("what are you", "wutchu");
-		registerPhrase("i am", "i iz");
-		registerPhrase("thank you", "ty");
-		registerPhrase("no problem", "np");
-		registerPhrase("lot of", "lawta");
-		registerPhrase("don't know", "dunno");
-		registerPhrase("dont know", "dunno");
-		registerPhrase("shut up", "shuddup");
-		registerPhrase("damn it", "dammit");
+		chat.registerPhrase("what are you", "wutchu");
+		chat.registerPhrase("i am", "i iz");
+		chat.registerPhrase("thank you", "ty");
+		chat.registerPhrase("no problem", "np");
+		chat.registerPhrase("lot of", "lawta");
+		chat.registerPhrase("don't know", "dunno");
+		chat.registerPhrase("dont know", "dunno");
+		chat.registerPhrase("shut up", "shuddup");
+		chat.registerPhrase("damn it", "dammit");
 
-		Bukkit.getServer().getPluginManager().registerEvents(new ChatListener(words, xwords, phrases, parts, endings), this);
+		// register suprise phrases that replace whole message.
+		// now supports SINGLE WORDS. (i.e. man not found in "i am a woman")
+		chat.registerSuprise("dolphin", "╯°□°）╯︵ ┻━┻ FLIP dat TABLE. ┻━┻ ︵ ヽ(°□°ヽ) FLIP dees TABLE. ┻━┻ ︵ ＼('0')／ ︵ ┻━┻ FLIP ALL le TABLE o;");
+		chat.registerSuprise("shat", "( ͡° ͜ʖ ͡°)( ͡° ͜ʖ ͡°)( ͡° ͜ʖ ͡°)( ͡° ͜ʖ ͡°)( ͡° ͜ʖ ͡°)T̵̛̺̫̦͙̍ͮ̃̈́̑̊̆́H͕̺̞͍̜̎ͭͤͨ̀̿ͦ́͠E̤̘̘̯ͪ́͆̂ͮ̓̋ͭ̚ ̩͈̪̙̮͖̖̞̆͌͒ͧ͗͗̍Ḓ͖͓͙̊ͤ͗̾̔ͬ̊̀Ǎ͎͙̙̼ͭͩ̄̂̓ͥ͠͠Ȓ̳́̅ͯͤͮ͋̏͊̀K̢̛͓̺̳̉͗ͣ̿̿̀͋̚͝ ̷̛̤̞̳͇͚̦̞ͣ͂ͤ̆̏ͭ̽͞ͅĻ̛̜͔͉̘̆ͦ̍Ȏ̵̮̣̗̟̞̜͔̩ͧ́̈ͧ͐̈́ͫŖ̠ͣͪ̃̏̂ͮ̎͆D̷͓̯̦͓̟̭̓̓ͧͤ̋̚ ̭͙͉̯̣̀ͩ͑͛͒̎͊Į̼̹ͯ̏̿̃ͣ̈́̉S̿ͤ̌ͣͪ̄͆̈ͯ́͏͖̼̩̳̩̦ ̳̦͔͍̱̩̰̔̽̏H͙̖̙̥̥͔̦̃ͨ̋ͣ̿ͅȄ̜̥̝̥͚̙̻ͦ̂̍̀̓͟R̨̢̛̘̪͖̜͚͂̊̾̑͆E̮͕͇̖̾̊̌͐̽̌ͨ̏͠( ͡° ͜ʖ ͡°)( ͡° ͜ʖ ͡°)( ͡° ͜ʖ ͡°)( ͡° ͜ʖ ͡°)( ͡° ͜ʖ ͡°)( ͡° ͜ʖ ͡°)( ͡° ͜ʖ ͡°)");
 
-		for (String word : words.keySet()) {
-			Bukkit.getLogger().info(word);
-
-		}
+		Bukkit.getServer().getPluginManager().registerEvents(chat, this);
 
 	}
 
@@ -185,58 +180,30 @@ public class Gibberish extends JavaPlugin {
 			if (sender instanceof Player) {
 
 				Player player = (Player) sender;
-				
-				if (!player.hasPermission("gibberish.use")){
-					return false;
-				}
 
 				if (args.length != 0) {
 					player.sendMessage(ChatColor.RED + "Usage: /gibberish");
-
-				} else {
-
-					if (hasEnabled.contains(player.getName())) {
-						hasEnabled.remove(player.getName());
-						player.sendMessage(ChatColor.BLUE + "Gibberish disabled!");
-
-					} else {
-						hasEnabled.add(player.getName());
-						player.sendMessage(ChatColor.BLUE + "Gibberish enabled!");
-
-					}
+					return true;
 
 				}
+
+				if (hasEnabled.contains(player.getName())) {
+					hasEnabled.remove(player.getName());
+					player.sendMessage(ChatColor.BLUE + "Gibberish disabled!");
+
+				} else {
+					hasEnabled.add(player.getName());
+					player.sendMessage(ChatColor.BLUE + "Gibberish enabled!");
+
+				}
+
 			}
-		}
 
-		return true;
-	}
-
-	public static void registerWord(String regularWord, String... gibberishWords) {
-
-		if (gibberishWords.length == 1) {
-			words.put(regularWord, gibberishWords[0]);
-			return;
+			return true;
 
 		}
 
-		xwords.put(regularWord, gibberishWords);
-
-	}
-
-	public void registerPart(String regularPart, String gibberishPart) {
-		parts.put(regularPart, gibberishPart);
-
-	}
-
-	private void registerPhrase(String regularPhrase, String gibberishPhrase) {
-		phrases.put(regularPhrase, gibberishPhrase);
-
-	}
-
-	private void registerEnding(String regularEnding, String gibberishEnding) {
-		endings.put(regularEnding, gibberishEnding);
-
+		return false;
 	}
 
 }
